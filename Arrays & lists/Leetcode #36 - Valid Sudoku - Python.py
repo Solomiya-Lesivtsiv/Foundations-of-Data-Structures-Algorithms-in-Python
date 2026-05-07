@@ -1,5 +1,5 @@
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
         rowSet = [set() for _ in range(9)]
         colSet = [set() for _ in range(9)]
         gridSet = [set() for _ in range(9)]
@@ -8,7 +8,7 @@ class Solution:
             for j in range(9):
                 if (board[i][j] == '.'):
                     continue
-                
+
                 gridNo = (i // 3) * 3 + (j // 3)
                 isPresentInRow = board[i][j] in rowSet[i]
                 isPresentInCol = board[i][j] in colSet[j]
@@ -16,7 +16,7 @@ class Solution:
 
                 if (isPresentInRow or isPresentInCol or isPresentInGrid):
                     return False
-                
+
                 rowSet[i].add(board[i][j])
                 colSet[j].add(board[i][j])
                 gridSet[gridNo].add(board[i][j])

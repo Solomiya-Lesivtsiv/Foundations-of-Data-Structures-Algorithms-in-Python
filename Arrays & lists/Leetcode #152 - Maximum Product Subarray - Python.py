@@ -1,5 +1,5 @@
 class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
+    def maxProduct(self, nums: list[int]) -> int:
         result = nums[0]
         maxProduct = nums[0]
         minProduct = nums[0]
